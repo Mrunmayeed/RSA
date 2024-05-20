@@ -188,16 +188,15 @@ This heuristic is a simplified model of more complex network resource allocation
 
 
 \section{Results}
-First the different learning rates were used for the algorithms. Then the learning rate that appeared to give the best result was set during the simulation of the cases:
-\begin{enumerate}[label=\Roman*.]
-    \item All requests have the same source and destination pair (\textit{San Diego Supercomputer Center} to \textit{Jon Von Neumann Center, Princeton, NJ})
-    \item The source and destination nodes are selected uniform-randomly among all nodes.
-\end{enumerate}
 
+Initially, various learning rates were applied to the algorithms. Subsequently, the learning rate that yielded the most favorable results was fixed during the simulation of the following cases:
+\begin{enumerate}[label=\Roman*.]
+\item All requests originate from the same source and target the same destination (\textit{San Diego Supercomputer Center} to \textit{Jon Von Neumann Center, Princeton, NJ}).
+\item The source and destination nodes are chosen uniformly at random from all available nodes.
+\end{enumerate}
 \subsection{Learning Curve}
 
-As explained, different learning rates were implemented for DQN and PPO. These were 0.1,0.01 and 0.001. The \ref{fig:PPOresults} shows the results for PPO with these learning rates and similarly \ref{fig:DQNresults} shows for DQN.
-
+As described, various learning rates were employed for the DQN and PPO algorithms, specifically 0.1, 0.01, and 0.001. Figure \ref{fig:PPOresults} illustrates the results for PPO using these learning rates, while Figure \ref{fig:DQNresults} displays the outcomes for DQN.
 \begin{figure}[ht]
   \centering
    \includegraphics[width=0.5\textwidth]{PPO.png}
@@ -219,8 +218,8 @@ As the learning rate of 0.01 seems to be increasing over time, it was finally se
 
 \subsection{Utilization}
 
-The mean utilization was calculated across all edges. Two cases fixed sources and destination pair (case I) and random source and destination pair (case II) have been presented. The RL algorithms like PPO and DQN were employed for this. The first 100 episodes were trained. Heuristic algorithm was also implemented and tested. \\
-The training time for reinforcement learning algorithms was close to a couple of minutes, and it performed quite well.
+The mean utilization was computed across all network edges. Two scenarios were analyzed: fixed source and destination pairs (Case I) and randomly selected source and destination pairs (Case II). Reinforcement learning algorithms such as PPO and DQN were utilized, with training conducted over the first 100 episodes. Additionally, a heuristic algorithm was implemented and evaluated. \\
+The training duration for the reinforcement learning algorithms was approximately a few minutes, and they performed quite effectively.
 
 \begin{figure}[ht]
   \centering
@@ -261,17 +260,15 @@ The training time for reinforcement learning algorithms was close to a couple of
   \label{fig:util_spectrum}
 \end{figure}
 
-
-
-The \ref{fig:util_dqn1} and \ref{fig:util_ppo1} shows utilization of dqn and PPO algorithms for case I, that is, when the source and destination are fixed. The same case for heuristic approach is covered in  \ref{fig:util_spectrum1}. These can be compared to understand their performances. On the other hand, for the case II, where source and destination are selected at random, \ref{fig:util_dqn} shows utilization for DQN, \ref{fig:util_ppo} for PPO and \ref{fig:util_spectrum} for hueristic approach. 
+Figures \ref{fig:util_dqn1} and \ref{fig:util_ppo1} display the utilization metrics for the DQN and PPO algorithms, respectively, in Case I, where the source and destination are predetermined. The utilization for the heuristic approach in the same scenario is presented in Figure \ref{fig:util_spectrum1}. These figures facilitate a comparison of their performances. Conversely, for Case II, where the source and destination are randomly selected, Figure \ref{fig:util_dqn} illustrates the utilization for DQN, Figure \ref{fig:util_ppo} for PPO, and Figure \ref{fig:util_spectrum} for the heuristic approach. 
 
 
 \subsection{Comparison}
 The results from experiments are compared and presented below.
 
 \begin{itemize}
-    \item For the first case, the utilization for hueristic approach is much worse than the reinforcement learning approaches. This shows that reinforcement learning gives much better results. The two RL techniques give comparable performances.
-    \item In the random approach (case II) as well, the hueristic is the worst performing algoithm. On the other hand the reinforcement learning gives much better results. Among the two RL techniques used, PPO seems to be performing slightly better.
+    \item In the first case, the utilization metrics for the heuristic approach are significantly poorer compared to the reinforcement learning approaches, indicating that reinforcement learning yields superior results. The two RL techniques, DQN and PPO, exhibit comparable performances.
+    \item In the random approach (Case II), the heuristic method also under performs. In contrast, the reinforcement learning approaches demonstrate considerably better outcomes. Among the RL techniques employed, PPO appears to have a slight performance edge over DQN.
 \end{itemize}
 
 
